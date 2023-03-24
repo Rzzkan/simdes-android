@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Create by Brian Dwi Murdianto
+  ~ Email : dwibrian120@gmail.com
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/gray_d"/>
+    <corners android:radius="24dp"/>
+</shape>

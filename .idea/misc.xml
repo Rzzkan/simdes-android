@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/KERJA/simdes/app/src/main/res/drawable/bg_btn_register.xml" value="0.1805" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/drawable/bg_btn_register_2.xml" value="0.1805" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/drawable/bg_inp_register.xml" value="0.1805" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/drawable/bg_instructions.xml" value="0.1805" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/drawable/bg_lay_register.xml" value="0.1805" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/drawable/bg_round_bottom_menu.xml" value="0.1805" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_apb_desa.xml" value="0.22" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_detail_apb_desa.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_detail_berita.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_detail_lapak_desa.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_detail_pengumuman.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_lapak_desa.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_pengaduan.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_pengajuan_surat.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_peta_desa.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_tambah_pengaduan.xml" value="0.20833333333333334" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/activity_tambah_pengajuan_surat.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/adapter_asesmen_karir.xml" value="0.12604166666666666" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/apb_desa_adapter.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/berita_adapter.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/bottom_navigation.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/jenis_surat_adapter.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/lapak_desa_adapter.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/pengaduan_adapter.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/pengajuan_surat_adapter.xml" value="0.209375" />
+        <entry key="..\:/KERJA/simdes/app/src/main/res/layout/pengumuman_adapter.xml" value="0.209375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

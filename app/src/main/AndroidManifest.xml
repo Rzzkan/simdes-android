@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.simdes.appgo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_simdes"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_simdes_around"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Appgo"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".PengumumanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BeritaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadSyaratPengajuanSuratActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SyaratSuratUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahPengajuanSuratActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PengajuanSuratActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LayananDesaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahPengaduanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PengaduanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailApbDesaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ApbDesaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PetaDesaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailLapakDesaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailPengumumanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailBeritaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LapakDesaActivity"
+            android:exported="false" />
+        <activity android:name=".NewPasswordActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="ocr" />
+    </application>
+
+</manifest>

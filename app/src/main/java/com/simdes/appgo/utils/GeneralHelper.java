@@ -92,7 +92,7 @@ public class GeneralHelper {
 //            conBal = "-";
 //        }
 
-        conBal = "Rp " + bal + ",-";
+        conBal = "Rp " + balDot + ",-";
 
         return conBal;
     }

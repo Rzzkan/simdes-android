@@ -60,6 +60,8 @@ public class PreferencesHelper {
 
     public static void clearLoggedInUser (Context context){
         SharedPreferences.Editor editor = getSharedPreference(context).edit();
+        editor.remove(KEY_USER_REGISTER);
+        editor.remove(KEY_PASS_REGISTER);
         editor.remove(KEY_USERNAME_IS_LOGIN);
         editor.remove(KEY_STATUS_IS_LOGIN);
         editor.apply();

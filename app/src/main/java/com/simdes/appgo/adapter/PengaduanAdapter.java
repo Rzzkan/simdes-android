@@ -21,8 +21,13 @@ import com.simdes.appgo.model.ApbDesaModel;
 import com.simdes.appgo.model.PengaduanModel;
 import com.simdes.appgo.network.Config;
 import com.simdes.appgo.utils.DataHelper;
+import com.simdes.appgo.utils.GeneralHelper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class PengaduanAdapter extends RecyclerView.Adapter<PengaduanAdapter.ViewHolder>{
 
@@ -70,7 +75,7 @@ public class PengaduanAdapter extends RecyclerView.Adapter<PengaduanAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        holder.txtJudul.setText(rvData.get(position).deskripsi);
+        holder.txtJudul.setText(rvData.get(position).deskripsi + "\n" + GeneralHelper.formatDate(rvData.get(position).created_at));
         holder.txtTindakan.setText(rvData.get(position).tindakan);
         holder.txtCatatan.setText(rvData.get(position).catatan);
 

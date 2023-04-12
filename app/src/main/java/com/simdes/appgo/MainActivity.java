@@ -1,6 +1,7 @@
 package com.simdes.appgo;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public ImageView imgProfile;
     public TextView txtNama, btnLihatBerita, btnLihatPengumuman;
     public LinearLayout btnBottomHome, btnBottomProfile,
-            btnLapakDesa, btnPetaDesa, btnApbDesa, btnPengaduan, btnLayananDesa;
+            btnLapakDesa, btnPetaDesa, btnApbDesa, btnPengaduan, btnLayananDesa, btnJdih, btnHubungiPetugas;
     public CardView btnKontak;
 
     @Override
@@ -66,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         btnApbDesa = findViewById(R.id.btnApbDesa);
         btnPengaduan = findViewById(R.id.btnPengaduan);
         btnLayananDesa = findViewById(R.id.btnLayananDesa);
+        btnJdih = findViewById(R.id.btnJdih);
+        btnHubungiPetugas = findViewById(R.id.btnHubungiPetugas);
+
         imgProfile = findViewById(R.id.imgProfile);
         txtNama = findViewById(R.id.txtNama);
         btnLihatBerita = findViewById(R.id.btnLihatBerita);
@@ -97,16 +101,60 @@ public class MainActivity extends AppCompatActivity {
                 new Intent(MainActivity.this, PengaduanActivity.class)));
         btnLayananDesa.setOnClickListener(v -> startActivity(
                 new Intent(MainActivity.this, PengajuanSuratActivity.class)));
+        btnJdih.setOnClickListener(v -> startActivity(
+                new Intent(MainActivity.this, JDIHActivity.class)));
 
         btnLihatBerita.setOnClickListener(view -> startActivity(
                 new Intent(MainActivity.this, BeritaActivity.class)));
         btnLihatPengumuman.setOnClickListener(view -> startActivity(
                 new Intent(MainActivity.this, PengumumanActivity.class)));
 
-        btnKontak.setOnClickListener(view -> sendWa());
+        btnHubungiPetugas.setOnClickListener(view -> {
+            popJenisSurat();
+        });
+        btnKontak.setOnClickListener(view -> {
+            Uri uri = Uri.parse("tel:" + DataHelper.data_konfigurasi.kontak);
+            Intent intent = new Intent(Intent.ACTION_DIAL, uri);
+            startActivity(intent);
+        });
 
         updateView();
 
+    }
+
+
+    public Dialog dialog;
+
+    public void popJenisSurat(){
+        dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.pop_pilih_call);
+
+        LinearLayout btnTelepon = dialog.findViewById(R.id.btnTelepon);
+        LinearLayout btnSms = dialog.findViewById(R.id.btnSms);
+        LinearLayout btnWhatsapp = dialog.findViewById(R.id.btnWhatsapp);
+
+        String phoneNumber = DataHelper.data_konfigurasi.kontak;
+        String message = "Saya ingi bertanya. \n\n";
+
+        btnTelepon.setOnClickListener(view -> {
+            Uri uri = Uri.parse("tel:" + phoneNumber);
+            Intent intent = new Intent(Intent.ACTION_DIAL, uri);
+            startActivity(intent);
+        });
+
+        btnSms.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("smsto:" + phoneNumber));
+            intent.putExtra("sms_body", message);
+            startActivity(intent);
+        });
+
+        btnWhatsapp.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + message));
+            startActivity(intent);
+        });
+
+        dialog.show();
     }
 
     public void sendWa(){

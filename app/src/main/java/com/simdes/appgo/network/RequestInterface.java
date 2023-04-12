@@ -5,6 +5,7 @@ import com.simdes.appgo.model.BeritaModel;
 import com.simdes.appgo.model.DataListModel;
 import com.simdes.appgo.model.DataModel;
 import com.simdes.appgo.model.ForgotPasswordModel;
+import com.simdes.appgo.model.JdihModel;
 import com.simdes.appgo.model.JenisSuratModel;
 import com.simdes.appgo.model.KonfigurasiModel;
 import com.simdes.appgo.model.LapakDesaModel;
@@ -64,6 +65,9 @@ public interface RequestInterface {
     @GET("apb_desa")
     Observable<DataListModel<ApbDesaModel>> reqApbDesa();
 
+    @GET("jdih")
+    Observable<DataListModel<ApbDesaModel>> reqJdih();
+
     @GET("peta_desa")
     Observable<DataModel<PetaDesaModel>> reqPetaDesa();
 
@@ -88,7 +92,7 @@ public interface RequestInterface {
     @FormUrlEncoded
     @POST("login")
     Observable<DataModel<LoginModel>> reqLogin(
-            @Field("email") String email,
+            @Field("nik") String nik,
             @Field("password") String password
     );
 

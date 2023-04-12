@@ -28,6 +28,7 @@ import com.simdes.appgo.network.RetrofitClient;
 import com.simdes.appgo.utils.FileUtils;
 import com.simdes.appgo.utils.GeneralHelper;
 import com.simdes.appgo.utils.PopHelper;
+import com.simdes.appgo.utils.PreferencesHelper;
 import com.simdes.appgo.utils.UserHelper;
 
 import java.io.File;
@@ -45,7 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
     public PopHelper ph;
     public ImageView myImage, imgProfile, imgIdCard;
     public EditText inpName, inpEmail, inpPhone, inpPassword, inpUlangiPassword;
-    public TextView btnUpdate, btnSaveIdCard, btnUpdatePassword;
+    public TextView btnUpdate, btnSaveIdCard, btnUpdatePassword, btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class ProfileActivity extends AppCompatActivity {
         inpEmail = findViewById(R.id.inpEmail);
         inpPhone = findViewById(R.id.inpPhone);
         btnUpdate = findViewById(R.id.btnUpdate);
+        btnLogout = findViewById(R.id.btnLogout);
         inpPassword = findViewById(R.id.inpPassword);
         inpUlangiPassword = findViewById(R.id.inpUlangiPassword);
 
@@ -108,6 +110,17 @@ public class ProfileActivity extends AppCompatActivity {
 
         btnUpdatePassword.setOnClickListener(view -> {
             new GeneralHelper().intentAct(this, NewPasswordActivity.class);
+        });
+
+        btnLogout.setOnClickListener(view -> {
+            PreferencesHelper.clearLoggedInUser(ProfileActivity.this);
+            UserHelper.user = null;
+            UserHelper.pass = "";
+            UserHelper.api_token = "";
+            Intent intent = new Intent(this, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
         });
     }
 

@@ -3,6 +3,7 @@ package com.simdes.appgo.utils;
 import com.simdes.appgo.SyaratSuratUserActivity;
 import com.simdes.appgo.model.ApbDesaModel;
 import com.simdes.appgo.model.BeritaModel;
+import com.simdes.appgo.model.JdihModel;
 import com.simdes.appgo.model.KonfigurasiModel;
 import com.simdes.appgo.model.LapakDesaModel;
 import com.simdes.appgo.model.PengaduanModel;
@@ -15,6 +16,7 @@ public class DataHelper {
     public static PengumumanModel data_pengumuman = null;
     public static LapakDesaModel data_lapak_desa = null;
     public static ApbDesaModel data_apb_desa = null;
+    public static JdihModel data_jdih = null;
     public static PengaduanModel data_pengaduan = null;
     public static PengajuanSuratModel data_pengajuan_surat = null;
     public static SyaratPengajuanSuratModel data_syarat_surat_user = null;

@@ -24,8 +24,13 @@ import com.simdes.appgo.model.PengaduanModel;
 import com.simdes.appgo.model.PengajuanSuratModel;
 import com.simdes.appgo.network.Config;
 import com.simdes.appgo.utils.DataHelper;
+import com.simdes.appgo.utils.GeneralHelper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class PengajuanSuratAdapter extends RecyclerView.Adapter<PengajuanSuratAdapter.ViewHolder>{
 
@@ -70,7 +75,12 @@ public class PengajuanSuratAdapter extends RecyclerView.Adapter<PengajuanSuratAd
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        holder.txtJudul.setText(rvData.get(position).surat.nama);
+        String nama_surat = "-";
+        if(rvData.get(position).surat != null){
+            nama_surat = rvData.get(position).surat.nama;
+        }
+
+        holder.txtJudul.setText(nama_surat + "\n" + GeneralHelper.formatDate(rvData.get(position).created_at));
         holder.txtTindakan.setText(rvData.get(position).tindakan);
         holder.txtCatatan.setText(rvData.get(position).catatan);
 

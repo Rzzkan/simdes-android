@@ -74,13 +74,22 @@ public class DetailApbDesaActivity extends AppCompatActivity {
                 GeneralHelper.formatDate(DataHelper.data_apb_desa.created_at));
 
         String berkas = Config.PATH_IMG + DataHelper.data_apb_desa.berkas.replace("//", "/");
-        new RetrivePDFfromUrl().execute(berkas);
+
+        try {
+            new RetrivePDFfromUrl().execute(berkas);
+        }catch (Exception e){
+            Toast.makeText(DetailApbDesaActivity.this, "Terjadi kesalahan \n" + e, Toast.LENGTH_SHORT).show();
+        }
 
         btnUnduhApbDesa.setOnClickListener(view -> {
-            Intent httpIntent = new Intent(Intent.ACTION_VIEW);
-            httpIntent.setData(Uri.parse("" + Config.PATH_IMG + DataHelper.data_apb_desa.berkas));
-            httpIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(httpIntent);
+            try {
+                Intent httpIntent = new Intent(Intent.ACTION_VIEW);
+                httpIntent.setData(Uri.parse("" + Config.PATH_IMG + DataHelper.data_apb_desa.berkas));
+                httpIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(httpIntent);
+            }catch (Exception e){
+                Toast.makeText(DetailApbDesaActivity.this, "Terjadi kesalahan \n" + e, Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

@@ -58,6 +58,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="3"
                     android:text="Ini adalah judul berita"
                     android:textColor="@color/black"
                     android:textSize="14sp" />

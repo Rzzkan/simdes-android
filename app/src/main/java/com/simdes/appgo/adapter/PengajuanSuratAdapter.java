@@ -76,8 +76,10 @@ public class PengajuanSuratAdapter extends RecyclerView.Adapter<PengajuanSuratAd
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
         String nama_surat = "-";
+        holder.btnUpdateSyarat.setVisibility(View.GONE);
         if(rvData.get(position).surat != null){
             nama_surat = rvData.get(position).surat.nama;
+            holder.btnUpdateSyarat.setVisibility(View.VISIBLE);
         }
 
         holder.txtJudul.setText(nama_surat + "\n" + GeneralHelper.formatDate(rvData.get(position).created_at));

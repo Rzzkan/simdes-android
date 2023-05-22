@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -56,14 +57,16 @@ public class DetailApbDesaActivity extends AppCompatActivity {
 
     public TextView txtJudul, txtTanggal;
     public PopHelper ph;
-    public PDFView pdfView;
     public CardView btnUnduhApbDesa;
+    public PDFView pdfView;
+    public WebView webDetail;
 
     public void _initView(){
         txtJudul = findViewById(R.id.txtJudul);
         txtTanggal = findViewById(R.id.txtTanggal);
         pdfView = findViewById(R.id.pdfView);
         btnUnduhApbDesa = findViewById(R.id.btnUnduhApbDesa);
+        webDetail = findViewById(R.id.webDetail);
 
         _actionView();
     }
@@ -73,7 +76,11 @@ public class DetailApbDesaActivity extends AppCompatActivity {
         txtTanggal.setText("Oleh: " + DataHelper.data_apb_desa.user.name + " | " +
                 GeneralHelper.formatDate(DataHelper.data_apb_desa.created_at));
 
-        String berkas = Config.PATH_IMG + DataHelper.data_apb_desa.berkas.replace("//", "/");
+        String berkas = Config.PATH_IMG.replace("http://", "https://") + DataHelper.data_apb_desa.berkas.replace("//", "/");
+
+//        webDetail.setWebViewClient(new myWebclient());
+//        webDetail.getSettings().setJavaScriptEnabled(true);
+//        webDetail.loadUrl(berkas + "");
 
         try {
             new RetrivePDFfromUrl().execute(berkas);
@@ -91,6 +98,24 @@ public class DetailApbDesaActivity extends AppCompatActivity {
                 Toast.makeText(DetailApbDesaActivity.this, "Terjadi kesalahan \n" + e, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public class myWebclient extends WebViewClient{
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return super.shouldOverrideUrlLoading(view, url);
+        }
     }
 
     class RetrivePDFfromUrl extends AsyncTask<String, Void, InputStream> {

@@ -1,7 +1,7 @@
 package com.simdes.appgo.network;
 
 public class Config {
-    public static String BASE_URL = "https://dev-simdes.sebaya.id/";
+    public static String BASE_URL = "http://192.168.100.12:8000/";
     public static String BASE_API = BASE_URL + "api/";
 
     //Path Image

@@ -52,6 +52,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        findViewById(R.id.btnBack).setOnClickListener(view -> finish());
         ph = new PopHelper(this);
         _initView();
     }

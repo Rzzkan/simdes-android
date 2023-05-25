@@ -11,7 +11,7 @@
     <color name="orange">#F49D1D</color>
     <color name="yellow">#FFEB3B</color>
 
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#BB0A1E</color>
     <color name="purple">#3E0095</color>
     <color name="purple_2">#7F3FDA</color>
     <color name="gray_stroke">#EEEEEE</color>
@@ -26,6 +26,6 @@
 
     <color name="red">#F32010</color>
     <color name="green">#23CF2A</color>
-    <color name="blue">#03A9F4</color>
+    <color name="blue">#BB0A1E</color>
     <color name="separator">#FAFAFA</color>
 </resources>
